@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
                 for (indice in 0..personajesJson.length()-1){
                     val personajeIndJson = personajesJson.getJSONObject(indice)
-                    val personaje = Personaje(personajeIndJson.getString("name"),personajeIndJson.getString("image"))
+                    val personaje = Personaje(personajeIndJson.getString("name"),personajeIndJson.getString("gender"),personajeIndJson.getString("image"))
                     listaPersonajes.add(personaje)
                 }
 

@@ -19,6 +19,7 @@ class PersonajeAdapter(val listaPersonajes:ArrayList<Personaje>): RecyclerView.A
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        holder.tvNombre.text=listaPersonajes[position].nombre
+        holder.tvLocation.text = listaPersonajes[position].Ultimalocacion
         Picasso.get()
             .load(listaPersonajes[position].foto)
             .into(holder.ivFoto)
@@ -31,10 +32,12 @@ class PersonajeAdapter(val listaPersonajes:ArrayList<Personaje>): RecyclerView.A
     class ViewHolder(vista:View):RecyclerView.ViewHolder(vista){
         val tvNombre:TextView
         val ivFoto:ImageView
+        val tvLocation:TextView
 
         init {
             tvNombre = vista.findViewById(R.id.tvNombreP)
             ivFoto = vista.findViewById(R.id.imaPersonaje)
+            tvLocation = vista.findViewById(R.id.tvLocation)
         }
     }
 }
